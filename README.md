@@ -11,10 +11,10 @@ A robust and efficient .NET Library for connecting to ODIN Market Data Feed via 
 - 🚀 **Real-time Data**: WebSocket-based streaming for low-latency market data
 - 🗜️ **Built-in Compression**: ZLIB compression support for optimized bandwidth usage
 - 📦 **Message Fragmentation**: Automatic handling of fragmented messages
-##- 🔄 **Reconnection Support**: Built-in connection management
-##- 📊 **Touchline Data**: Subscribe to real-time price updates
-##- ⏸️ **Pause/Resume**: Control data flow as needed
-##- 🎯 **Type-Safe**: Strongly-typed models for market data
+#- 🔄 **Reconnection Support**: Built-in connection management
+#- 📊 **Touchline Data**: Subscribe to real-time price updates
+#- ⏸️ **Pause/Resume**: Control data flow as needed
+#- 🎯 **Type-Safe**: Strongly-typed models for market data
 
 ## Installation
 
@@ -224,7 +224,7 @@ Pauses or resumes the market data broadcast.
 1. **Verify credentials**: Ensure userId and apiKey are correct
 2. **Check network**: Verify firewall settings allow WebSocket connections
 3. **Port accessibility**: Ensure the specified port is not blocked
-4. **SSL certificate**: For SSL connections, ensure valid certificates
+#4. **SSL certificate**: For SSL connections, ensure valid certificates
 
 ## License
 
