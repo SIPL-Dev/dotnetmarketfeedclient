@@ -19,7 +19,7 @@ A robust and efficient .NET Library for connecting to ODIN Market Data Feed via 
 ### Manual Install
 ```bash
 - Download DLL from releases
-- Right click on your project » Add » Reference » Click Browse » Select ODINMarketFeed.dll  and VisualJZlibCompression.dll
+- Right click on your project » Add » Reference » Click Browse » Select KiteConnect.dll
 ```
 
 ## Quick Start

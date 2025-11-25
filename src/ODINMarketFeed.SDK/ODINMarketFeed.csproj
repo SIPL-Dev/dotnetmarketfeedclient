@@ -8,15 +8,15 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     
     <!-- Package Information -->
-    <PackageId>ODINMarketFeed.SDK</PackageId>
+    <PackageId>ODINMarketFeed</PackageId>
     <Version>1.0.0</Version>
     <Authors>Your Name</Authors>
     <Company>Your Company</Company>
-    <Description>ODIN Market Feed Client SDK - A robust .NET library for connecting to ODIN market data feed via WebSocket with compression support.</Description>
+    <Description>ODIN Market Feed Client  - A robust .NET library for connecting to ODIN market data feed via WebSocket with compression support.</Description>
     <PackageTags>odin;market-data;websocket;trading;stock-market;real-time;feed;compression</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/yourusername/ODINMarketFeedSDK</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/ODINMarketFeedSDK</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/SIPL-Dev/dotnetmarketfeedclient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SIPL-Dev/dotnetmarketfeedclient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     
