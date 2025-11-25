@@ -1,10 +1,9 @@
-# ODIN Market Feed SDK
+# ODIN Market Feed .Net library
 
-[![NuGet](https://img.shields.io/nuget/v/ODINMarketFeed.SDK.svg)](https://www.nuget.org/packages/ODINMarketFeed.SDK)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%204.8-blue)](https://dotnet.microsoft.com/)
 
-A robust and efficient .NET SDK for connecting to ODIN Market Data Feed via WebSocket with built-in compression support. This SDK enables real-time market data streaming for trading applications.
+A robust and efficient .NET Library for connecting to ODIN Market Data Feed via WebSocket with built-in compression support. This Library enables real-time market data streaming for trading applications.
 
 ## Features
 
@@ -12,21 +11,21 @@ A robust and efficient .NET SDK for connecting to ODIN Market Data Feed via WebS
 - 🚀 **Real-time Data**: WebSocket-based streaming for low-latency market data
 - 🗜️ **Built-in Compression**: ZLIB compression support for optimized bandwidth usage
 - 📦 **Message Fragmentation**: Automatic handling of fragmented messages
-- 🔄 **Reconnection Support**: Built-in connection management
-- 📊 **Touchline Data**: Subscribe to real-time price updates
-- ⏸️ **Pause/Resume**: Control data flow as needed
-- 🎯 **Type-Safe**: Strongly-typed models for market data
+##- 🔄 **Reconnection Support**: Built-in connection management
+##- 📊 **Touchline Data**: Subscribe to real-time price updates
+##- ⏸️ **Pause/Resume**: Control data flow as needed
+##- 🎯 **Type-Safe**: Strongly-typed models for market data
 
 ## Installation
 
 ### NuGet Package Manager
 ```bash
-Install-Package ODINMarketFeed.SDK
+#Install-Package ODINMarketFeed.SDK
 ```
 
 ### .NET CLI
 ```bash
-dotnet add package ODINMarketFeed.SDK
+#dotnet add package ODINMarketFeed.SDK
 ```
 
 ### Package Reference
@@ -97,14 +96,6 @@ client.Dispose();
 
 ### Advanced Usage
 
-#### Compression Control
-
-```csharp
-var client = new ODINMarketFeedClient();
-
-// Disable compression (if needed)
-client.SetCompression(false);
-```
 
 #### Pause/Resume Subscription
 
@@ -126,14 +117,6 @@ await client.UnSubscribeTouchlineAsync(tokensToUnsubscribe);
 ## Token Format
 
 Tokens follow the format: `{MarketSegmentID}_{Token}`
-
-**Market Segment IDs:**
-- `1` - NSE Cash/Equity
-- `2` - NSE Futures & Options
-- `3` - NSE Currency
-- `4` - BSE Cash/Equity
-- `5` - BSE Futures & Options
-- `6` - MCX Commodity
 
 **Example:**
 - `1_2885` - NSE Cash segment, token 2885
@@ -184,53 +167,13 @@ client.OnClose += (code, reason) =>
 
 ## Message Format
 
-Market data messages use a pipe-delimited format:
-
-```
-63=FT3.0|64=105|1={MarketSegmentId}|7={Token}|8={LTP}|...
-```
-
-**Common Fields:**
-- `1` - Market Segment ID
-- `7` - Token/Security ID
-- `8` - Last Traded Price (LTP)
-- `2` - Best Bid Quantity
-- `3` - Best Bid Price
-- `5` - Best Ask Quantity
-- `6` - Best Ask Price
-- `73` - Last Trade Time
-- `74` - Last Update Time
-- `75` - Open Price
-- `76` - Close Price
-- `77` - High Price
-- `78` - Low Price
-
-## Configuration
-
-### Connection Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| host | string | Yes | WebSocket server hostname |
-| port | int | Yes | WebSocket server port (1-65535) |
-| useSSL | bool | Yes | Use secure WebSocket (wss://) |
-| userId | string | Yes | Your user ID |
-| apiKey | string | Yes | Your API key |
-
-### Response Types
-
-| Value | Description |
-|-------|-------------|
-| 0 | Normal touchline (pipe-delimited format) |
-| 1 | Fixed length native binary data |
+Please refer api documentation
 
 ## Sample Projects
 
 Check the [`samples`](./samples) directory for complete working examples:
 
 - **ConsoleApp** - Basic console application demonstrating SDK usage
-- **WindowsService** - Example of running as a Windows service
-- **AspNetCore** - Integration with ASP.NET Core
 
 ## API Reference
 
@@ -270,20 +213,12 @@ Task SubscribePauseResumeAsync(bool isPause)
 ```
 Pauses or resumes the market data broadcast.
 
-#### SetCompression
-```csharp
-void SetCompression(bool enabled)
-```
-Enables or disables ZLIB compression.
 
 ## Requirements
 
 - **.NET 8.0** or **.NET Framework 4.8** or higher
-- Active ODIN Market Feed account with valid credentials
-- Network connectivity to ODIN Market Feed servers
 
 ## Troubleshooting
-
 ### Connection Issues
 
 1. **Verify credentials**: Ensure userId and apiKey are correct
@@ -291,40 +226,9 @@ Enables or disables ZLIB compression.
 3. **Port accessibility**: Ensure the specified port is not blocked
 4. **SSL certificate**: For SSL connections, ensure valid certificates
 
-### Message Processing
-
-1. **Enable logging**: Add console output for debugging
-2. **Check token format**: Verify tokens follow `{segment}_{token}` format
-3. **Monitor events**: Subscribe to OnError event for detailed error messages
-
-## Performance Tips
-
-1. **Compression**: Keep compression enabled for production use
-2. **Token management**: Unsubscribe from unused tokens to reduce bandwidth
-3. **Event handlers**: Keep event handlers lightweight and async
-4. **Connection pooling**: Reuse client instances when possible
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-
-For issues, questions, or contributions, please:
-
-- 📫 Open an issue on [GitHub](https://github.com/yourusername/ODINMarketFeedSDK/issues)
-- 📧 Contact support at: support@example.com
-- 📖 Check the [documentation](./docs)
 
 ## Changelog
 
@@ -332,15 +236,7 @@ For issues, questions, or contributions, please:
 - Initial release
 - WebSocket connectivity
 - ZLIB compression support
-- Touchline subscription
-- Message fragmentation handling
-- Multi-framework support (.NET 8.0 and .NET Framework 4.8)
-
-## Acknowledgments
-
-- Built with ❤️ for the trading community
-- Thanks to all contributors
 
 ---
 
-**Disclaimer**: This SDK is provided as-is. Always test thoroughly in a development environment before using in production.
+**Disclaimer**: This Library is provided as-is. Always test thoroughly in a development environment before using in production.
