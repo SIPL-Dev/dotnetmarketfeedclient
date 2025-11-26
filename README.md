@@ -106,53 +106,12 @@ await client.UnSubscribeTouchlineAsync(tokensToUnsubscribe);
 ## Token Format
 
 Tokens follow the format: `{MarketSegmentID}_{Token}`
+Please refer api documentation for Market Segment Id
 
 **Example:**
 - `1_2885` - NSE Cash segment, token 2885
 - `2_12345` - NSE F&O segment, token 12345
 
-## Events
-
-### OnOpen
-Fired when the WebSocket connection is successfully established.
-
-```csharp
-client.OnOpen += () => 
-{
-    // Connection established
-};
-```
-
-### OnMessage
-Fired when a message is received from the feed.
-
-```csharp
-client.OnMessage += (message) => 
-{
-    // Process market data
-    // Message format: "63=FT3.0|64=105|1=1|7=2885|8=12345|..."
-};
-```
-
-### OnError
-Fired when an error occurs.
-
-```csharp
-client.OnError += (error) => 
-{
-    // Handle error
-};
-```
-
-### OnClose
-Fired when the connection is closed.
-
-```csharp
-client.OnClose += (code, reason) => 
-{
-    // Handle disconnection
-};
-```
 
 ## Message Format
 
@@ -162,45 +121,7 @@ Please refer api documentation
 
 Check the [`samples`](./samples) directory for complete working examples:
 
-- **ConsoleApp** - Basic console application demonstrating SDK usage
-
-## API Reference
-
-### ODINMarketFeedClient Methods
-
-#### ConnectAsync
-```csharp
-Task ConnectAsync(string host, int port, bool useSSL, string userId, string apiKey)
-```
-Establishes connection to the ODIN Market Feed.
-
-#### DisconnectAsync
-```csharp
-Task DisconnectAsync()
-```
-Gracefully closes the WebSocket connection.
-
-#### SubscribeTouchlineAsync
-```csharp
-Task SubscribeTouchlineAsync(
-    IEnumerable<string> tokenList, 
-    string responseType = "0", 
-    bool LTPChangeOnly = false
-)
-```
-Subscribes to touchline data for specified tokens.
-
-#### UnSubscribeTouchlineAsync
-```csharp
-Task UnSubscribeTouchlineAsync(IEnumerable<string> tokenList)
-```
-Unsubscribes from touchline data for specified tokens.
-
-#### SubscribePauseResumeAsync
-```csharp
-Task SubscribePauseResumeAsync(bool isPause)
-```
-Pauses or resumes the market data broadcast.
+- **ConsoleApp** - Basic console application demonstrating Library usage
 
 
 ## Requirements
